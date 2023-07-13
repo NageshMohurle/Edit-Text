@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colorChange</title>
+</head>
+<script>
+    function sizeChange() {
+        let sizeChange = parseInt(document.getElementById('sizeChange').value)
+        document.querySelector('p').style.fontSize = sizeChange + "px"
+        document.getElementById('showValue').innerHTML = sizeChange
+    }
+    function ApplyColor() {
+        // let textColor = document.getElementById('textColor').value
+        document.querySelector('p').style.color = document.getElementById('txtColor').value
+        console.log(txtColor)
+    }
+    function AlignChange() {
+        // let textColor = document.getElementById('textColor').value
+        document.querySelector('p').style.textAlign = document.getElementById('lstAlign').value
+    }
+
+</script>
+
+<body>
+    <dl>
+        <dt>Font-size</dt>
+        <dd><span id="showValue">10</span><input onchange="sizeChange()" id="sizeChange" type="range" min="10" max="100"
+                value="">100</dd>
+        <dt>Choose Color</dt>
+        <dd><input type="color" onchange="ApplyColor()" id="txtColor"></dd>
+        <dt>Select Alignment</dt>
+        <dd>
+            <select name="" id="lstAlign" onchange="AlignChange()">
+                <option>left</option>
+                <option>center</option>
+                <option>right</option>
+                <option>top</option>
+            </select>
+        </dd>
+    </dl>
+    <p align="center" id="text">Sample Text</p>
+</body>
+
+</html>
